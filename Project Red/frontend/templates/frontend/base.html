@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Gag Game</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'frontend/css/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Gag Game!</h1>
+  </header>
+  <main>
+    <a href="{% url 'ui_examples' %}">Various UI Examples</a>
+    <div id="game-area"></div>
+    <p>
+    <button id="alert-btn">Alert Message</button>   <button onclick="randomMessage()">Put A Message In The Textbox Above</button>
+    </p>
+  </main>
+  <footer>
+    <p>Created by Team Red <br>
+        &copy; 2025, All Rights Reserved
+    </p>
+  </footer>
+  <script src="{% static 'frontend/js/app.js' %}"></script>
+</body>
+</html>
