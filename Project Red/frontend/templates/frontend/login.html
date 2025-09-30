@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  {% load static %}
+  <!--<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/> -->
+  <link rel="stylesheet" href="{% static 'frontend/css/style.css' %}">
+</head>
+<body>
+    
+    <header>
+        <h1>Login</h1>
+    </header>
+    
+<main>
+  <div class="login-card">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div id="cookieConsentBox" style="display: none;">
+    <h2>This website uses cookies!</h2>
+    <p>We use cookies. We're running out of cookies. Give us your cookies.</p>
+    <button id="acceptCookies">Accept</button>
+    <button id="rejectCookies">Reject</button>
+  </div>
+</main>
+    
+    <footer>
+        <div class="footer">
+            <p>Created by Team Red <br>
+                &copy; 2025, All Rights Reserved
+            </p>
+        </div>
+    </footer>
+
+<script src="{% static 'frontend/js/login.js' %}"></script>
+</body>
+</html>

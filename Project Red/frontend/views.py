@@ -8,6 +8,9 @@ def index(request):
 def examples(request):
     return render(request, "frontend/ui_examples.html")
 
+def login(request):
+    return render(request, "frontend/login.html")
+
 '''
 def function(request):
     return render(request, "frontend/filename.html")

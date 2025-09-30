@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("",views.index, name="index"), # project home page
     path("ui_examples/", views.examples, name="ui_examples"),
+    path("login/", views.login, name="login"),
 ]
