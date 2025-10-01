@@ -5,8 +5,8 @@ from django.shortcuts import render
 def index(request):
     return render(request, "frontend/base.html")
 
-def examples(request):
-    return render(request, "frontend/ui_examples.html")
+def game(request):
+    return render(request, "frontend/game.html")
 
 def login(request):
     return render(request, "frontend/login.html")

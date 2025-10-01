@@ -12,12 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cookieBox.style.display = "none"; // allow login
   });
 
-  rejectBtn.addEventListener("click", () => {
-    location.reload(); // gag: refresh page so it's stuck
-  });
-});
-
-
     function setCookie(cname, cvalue, exdays) {
         const d = new Date();
         d.setTime(d.getTime() + (exdays * 1 * 1 * 1 * 1));
@@ -50,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         acceptBtn.onclick = function() {
-            setCookie("userConsent", "accepted", 0); // Consent for 0 days
+            setCookie("userConsent", "accepted", 0); // Consent for 0 days, so that the user is always prompted with cookies consent message
             consentBox.style.display = "none";
         };
 
@@ -59,4 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
             consentBox.style.display = "none";
             alert("Big Mistake. We told you we wanted your cookies.");
         };
-    };
+    }
+}
+)

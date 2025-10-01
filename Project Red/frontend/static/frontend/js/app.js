@@ -3,14 +3,6 @@ function showAlert() {
 }
 document.getElementById("alert-btn").addEventListener("click", showAlert);
 
-
-function randomBackground() {
-  const colors = ["red", "blue", "green", "yellow", "purple", "pink"];
-  document.body.style.backgroundColor = 
-    colors[Math.floor(Math.random() * colors.length)];
-}
-
-
 function randomMessage() {
   const messages = [
     "You win absolutely nothing!",

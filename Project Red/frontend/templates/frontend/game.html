@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Page</title>
+  <link rel="stylesheet" href="{% static 'frontend/css/style.css' %}">
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to the Gag Game!</h1>
+  </header>
+  <p>
+    <a href="{% url 'index' %}">Home Page</a>
+    <br>
+    <br>
+    <a href="{% url 'login' %}">Login Page</a>
+  </p>
+</body>
+
+<footer>
+  <div class="footer">
+    <p>Created by Team Red <br>
+      &copy; 2025, All Rights Reserved
+    </p>
+  </div>
+</footer>
+
+  <script src="{% static 'frontend/js/app.js' %}"></script>
+</body>
+</html>
