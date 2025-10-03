@@ -24,4 +24,5 @@ urlpatterns = [
     path("",views.index, name="index"), # project home page
     path("game/", views.game, name="game"),
     path("login/", views.login, name="login"),
+    path("start/", views.start, name="start"),
 ]

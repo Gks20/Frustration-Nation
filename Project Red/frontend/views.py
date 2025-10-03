@@ -11,6 +11,9 @@ def game(request):
 def login(request):
     return render(request, "frontend/login.html")
 
+def start(request):
+    return render(request, "frontend/start.html")
+
 '''
 def function(request):
     return render(request, "frontend/filename.html")

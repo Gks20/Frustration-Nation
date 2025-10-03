@@ -9,18 +9,17 @@
 
 <body>
   <header>
-    <h1>
-      Login
-    </h1>
-    <h7>
-        <button type="submit"></button>
-    </h7>
+      <h1>
+       Welcome to the gag game!
+      </h1>
   </header>
   
   <main>
     <!-- div for the "card" style format on the login screen (style it in style.css)-->
     <div class="login-card">
-      <h1>Login</h1>
+      <h1 class="header-login">
+        <button class="login-btn">LOGIN</button>
+      </h1>
       <form id="loginForm">
         <div class="form-group">
           <label for="email">Email</label>
@@ -30,10 +29,15 @@
           <label for="password">Password</label>
           <input type="password" id="password" placeholder="Enter your password" required>
         </div>
-        <button type="submit">Login</button>
+        <button id="login-button">Login</button>
+        <button type="button"> Complaint? </button>
       </form>
     </div>
     
+<!--  <button class="login-btn">
+          <a href="{% url 'start' %}">Login Page</a></button>-->
+
+    <!-- cookies puzzle (cookies consent box)-->
     <div id="cookieConsentBox" style="display: none;">
       <h2>This website uses cookies!</h2>
       <p>We use cookies. We're running out of cookies. Give us your cookies.</p>

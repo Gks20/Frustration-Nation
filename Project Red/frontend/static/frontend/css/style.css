@@ -1,11 +1,14 @@
 /*  Base Layout */
 
-
 header {
   background: #b30000;
   color: white;
   text-align: center;
   padding: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
 }
 
 footer {
@@ -67,7 +70,30 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Game Area */
+.header-login .login-btn {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000000;
+  cursor: pointer;
+}
+
+.header-login .login-btn:hover {
+  text-decoration: underline;
+}
+
+/* start button for start.html */
+.start-btn {
+  border: none;
+  background-color: #000000;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Game Area div */
 #game-area {
   padding: 1rem;
   border: 2px dashed #b30000;
@@ -218,3 +244,20 @@ button:hover {
   border-radius: 4px;
 }
   */
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#bouncingButton {
+    position: absolute; 
+    padding: 15px 25px;
+    font-size: 20px;
+    background-color: #b30000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.1s linear;
+}
