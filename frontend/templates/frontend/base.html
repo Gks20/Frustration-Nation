@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Project Red Game{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'frontend/css/style.css' %}">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  {% block header %}
+  <header>
+    <img class="site-logo" src="{% static 'frontend/image/header-logo-1100.png' %}"
+     alt="Welcome to the Frustration Nation!" />
+  </header>
+  {% endblock %}
+
+  {% block navigation %}
+  <nav class="main-nav">
+    <div class="glow">
+      <a class="nav-home" href="{% url 'index' %}">Home</a>
+      <a class="nav-store" href="{% url 'store:storefront' %}">Store</a>
+    </div>
+  </nav>
+  {% endblock %}
+  
+  <main>
+    {% block content %}
+    <!-- Default content for home page -->
+    <div class="home-welcome">
+      <h1>Welcome to Project Red</h1>
+      <p>Choose your path to the fishing adventure:</p>
+      
+      <div class="home-options">
+        <a href="{% url 'login' %}" class="home-btn login-btn">
+          <h3>🔐 Login</h3>
+          <p>Go through the proper login process</p>
+        </a>
+        
+        <a href="{% url 'game' %}" class="home-btn skip-btn">
+          <h3>🎣 Skip to Fishing</h3>
+          <p>Skip the annoying login and get straight to the action!</p>
+        </a>
+      </div>
+    </div>
+    {% endblock %}
+  </main>
+
+  <footer class="site-footer">
+  <div class="wave-wrapper" aria-hidden="true">
+    <svg class="wave wave-back" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,30 C150,90 350,0 600,30 C850,60 1050,10 1200,40 L1200,120 L0,120 Z"></path>
+    </svg>
+
+    <svg class="wave wave-front" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,50 C200,10 400,90 600,50 C800,10 1000,90 1200,50 L1200,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <div class="footer-content">
+    <p>Created by Team Red <br>
+      &copy; 2025, All Rights Reserved
+    </p>
+  </div>
+</footer>
+  
+<script src="{% static 'frontend/js/app.js' %}"></script>
+</body>
+</html>

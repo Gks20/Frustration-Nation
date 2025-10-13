@@ -1,0 +1,56 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+
+{% block title %}Fishing Game{% endblock %}
+
+{% block body_class %}page-game{% endblock %}
+
+{% block content %}
+  <div class="game-page">
+    <section class="game-card" role="region" aria-labelledby="gameTitleHeading">
+      <div class="game-card__header">
+        <div class="game-card__header-row">
+          <h1 id="gameTitleHeading" class="game-title title-theme-badge" aria-live="polite">
+            <span class="title-text"><span id="fishyName">Frustration Fishing</span></span>
+            <span class="title-underline" aria-hidden="true"></span>
+            <span class="fishy" aria-hidden="true"></span>
+          </h1>
+          <div class="header-stats" aria-live="polite">
+            <span id="coins" class="coin-chip" title="Coins">0</span>
+            <span id="streak" class="streak-pill" title="Cast streak">Streak x0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-card__body">
+        <div id="gameMessage" class="game-message" aria-live="polite"></div>
+        <div class="container">
+          <p>Current Count: <span id="counter">0</span></p>
+          <button id="castButton">Cast</button>
+        </div>
+
+        <div class="progress" aria-hidden="false">
+          <div class="progress-bar" id="rewardProgress" style="width: 0%"></div>
+          <div class="progress-label" id="progressLabel">Next bonus at 10 casts</div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Little boat riding the footer waves -->
+  <div class="boat" id="gameBoat" aria-hidden="true" title="S.S. Patience">
+    <!-- Simple SVG boat -->
+    <svg viewBox="0 0 200 120" width="160" height="96" role="img" aria-label="Boat">
+      <!-- Hull -->
+      <path d="M15 80 L185 80 L160 105 L40 105 Z" fill="#6b3f2d" stroke="#4a2a1e" stroke-width="3"/>
+      <!-- Mast -->
+      <rect x="98" y="20" width="4" height="60" fill="#7a5c49"/>
+      <!-- Sail -->
+      <path d="M102 25 L165 60 L102 60 Z" fill="#ffffff" stroke="#e6e6e6" stroke-width="2"/>
+      <!-- Flag -->
+      <path d="M102 20 L125 28 L102 36 Z" fill="#0a8be0"/>
+    </svg>
+  </div>
+  
+  <script src="{% static 'frontend/js/game.js' %}"></script>
+{% endblock %}
