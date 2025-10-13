@@ -1,0 +1,53 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+
+{% block title %}Store{% endblock %}
+
+{% block content %}
+<div class="store-container">
+    <div class="store-header">
+        <h1>Project Red Store</h1>
+        <div class="coin-display">
+            <img src="{% static 'frontend/image/FishButton.png' %}" alt="Coins" class="coin-icon">
+            <span id="store-coins">0</span>
+        </div>
+    </div>
+    
+    <div class="store-nav">
+        <button class="category-btn active" data-category="all">All Items</button>
+        <button class="category-btn" data-category="baits">Baits</button>
+        <button class="category-btn" data-category="rods">Rods</button>
+        <button class="category-btn" data-category="upgrades">Upgrades</button>
+        <button class="category-btn" data-category="decorations">Decorations</button>
+    </div>
+    
+    <div class="products-grid" id="products-grid">
+        <!-- Products will be loaded by JavaScript -->
+    </div>
+    
+    <div class="inventory-section">
+        <h2>Your Inventory</h2>
+        <div class="inventory-grid" id="inventory-grid">
+            <!-- Inventory will be loaded by JavaScript -->
+        </div>
+    </div>
+</div>
+
+<!-- Custom popup overlay -->
+<div id="popup-overlay" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <h3 id="popup-title">Store</h3>
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+        </div>
+        <div class="popup-body">
+            <p id="popup-message"></p>
+        </div>
+        <div class="popup-footer">
+            <button class="popup-btn popup-confirm" onclick="closePopup()">OK</button>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'frontend/js/store.js' %}"></script>
+{% endblock %}
