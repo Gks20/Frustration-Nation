@@ -1,0 +1,164 @@
+{
+  "text_fish": [ 
+    {
+      "type": "text",
+      "text_fish_id": "txt001",
+      "text_fish_message": "Fish are survivors because in their world, every day is a struggle to stay afloat!"
+    },
+    {
+      "type": "text",
+      "text_fish_id": "txt002",
+      "text_fish_message": "Don't mess with me, I'm covered in muscles!"
+    },
+    {
+      "type": "text",
+      "text_fish_id": "txt003",
+      "text_fish_message": "Whale, whale, what do we have here?"
+    },
+    {
+      "type": "text",
+      "text_fish_id": "txt004",
+      "text_fish_message": "If you think of a betta pun, be sure to drop us a line."
+    },
+    {
+      "type": "text",
+      "text_fish_id": "txt005",
+      "text_fish_message": "When a fish tries to make you think you're crazy, tell it to stop bass-lighting you!"
+    },
+    {
+      "type": "text",
+      "text_fish_id": "txt006",
+      "text_fish_message": "Never try to talk to a fish before it is caf-fin-ated."
+    },
+    {
+      "type": "text",
+      "text_fish_id": "txt007",
+      "text_fish_message": "You discovered a fish that tells jokes. Why did the fish cross the road? To get to the other tide!"
+    },
+    {
+      "type": "text",
+      "text_fish_id": "txt008",
+      "text_fish_message": "Cod you please calm down? You’re being a reel pain in the bass."
+    },
+    {
+      "type": "text",
+      "text_fish_id": "txt009",
+      "text_fish_message": "Someone’s crabby this morning."
+    },
+    {
+      "type": "text",
+      "text_fish_id": "txt010",
+      "text_fish_message": "I just got my report card. I passed with seven seas."
+    }
+  ],
+
+
+
+  "img_fish": [
+    {
+      "type": "image",
+      "img_fish_id": "img001",
+      "img_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\Annotations-in-code.jpg"
+    },
+    {
+      "type": "image",
+      "img_fish_id": "img002",
+      "img_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\Understanding-code.jpg"
+    },
+    {
+      "type": "image",
+      "img_fish_id": "img003",
+      "img_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\If-it-aint-broke.jpg"
+    },
+    {
+      "type": "image",
+      "img_fish_id": "img004",
+      "img_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\It-is-a-strange-fate.jpg"
+    },
+    {
+      "type": "image",
+      "img_fish_id": "img005",
+      "img_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\Programmer-baby.jpg"
+    },
+    {
+      "type": "image",
+      "img_fish_id": "img006",
+      "img_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\Railway-768x320.jpg"
+    },
+    {
+      "type": "image",
+      "img_fish_id": "img007",
+      "img_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\searching_meaningful_variable_name.png"
+    },
+    {
+      "type": "image",
+      "img_fish_id": "img008",
+      "img_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\See-what-sticks.jpg"
+    },
+    {
+      "type": "image",
+      "img_fish_id": "img009",
+      "img_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\See-what-sticks.jpg"
+    },
+    {
+      "type": "image",
+      "img_fish_id": "img010",
+      "img_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\Your-old-code.jpg"
+    }
+  ],
+
+
+
+  "gif_fish": [
+    {
+      "type": "gif",
+      "gif_fish_id": "gif001",
+      "gif_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\bug-developer-gif.gif"
+    },
+    {
+      "type": "gif",
+      "gif_fish_id": "gif002",
+      "gif_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\code-no-work-gif.gif"
+    }, 
+    {
+      "type": "gif",
+      "gif_fish_id": "gif003",
+      "gif_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\error-message-gif.gif"
+    },
+    {
+      "type": "gif",
+      "gif_fish_id": "gif004",
+      "gif_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\homer-gif.gif"
+    }, 
+    {
+      "type": "gif",
+      "gif_fish_id": "gif005",
+      "gif_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\if-it-works-no-touch-gif.gif"
+    },
+    {
+      "type": "gif",
+      "gif_fish_id": "gif006",
+      "gif_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\not-important-gif.gif"
+    },
+    {
+      "type": "gif",
+      "gif_fish_id": "gif007",
+      "gif_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\program-crash-gif.gif"
+    },
+    {
+      "type": "gif",
+      "gif_fish_id": "gif008",
+      "gif_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\\programming-typing-cat-gif.gif"
+    },
+    {
+      "type": "gif",
+      "gif_fish_id": "gif009",
+      "gif_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\refactor-gif.gif"
+    },
+    {
+      "type": "gif",
+      "gif_fish_id": "gif010",
+      "gif_fish_url": "C:\\Users\\Admin\\OneDrive\\Documents\\Ivy_Tech\\Fall_2025\\SDEV265\\Team_Red\\Project-Red\\Project Red\\database\rewards\rgb-cat-gif.gif"
+    }
+  ]
+}
