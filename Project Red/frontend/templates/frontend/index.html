@@ -1,0 +1,29 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+
+{% block title %}Project Red - Fishing Adventure{% endblock %}
+
+{% block body_class %}page-home{% endblock %}
+
+{% block navigation %}
+  <!-- Home page has no navigation menu - just the logo - keep this in mind -->
+{% endblock %}
+
+{% block content %}
+  <div class="home-welcome">
+    <h1>Welcome to Project Red</h1>
+    <p>Choose your path to the fishing adventure:</p>
+    
+    <div class="home-options">
+      <a href="{% url 'login' %}" class="home-btn login-btn">
+        <h3>🔐 Login</h3>
+        <p>Go through the proper login process</p>
+      </a>
+      
+      <a href="{% url 'game' %}" class="home-btn skip-btn">
+        <h3>🎣 Skip to Fishing</h3>
+        <p>Skip the annoying login and get straight to the action!</p>
+      </a>
+    </div>
+  </div>
+{% endblock %}

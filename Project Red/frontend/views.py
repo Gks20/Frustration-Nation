@@ -3,7 +3,8 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    return render(request, "frontend/base.html")
+    """Home page with login and skip to fishing options"""
+    return render(request, "frontend/index.html")
 
 def game(request):
     return render(request, "frontend/game.html")

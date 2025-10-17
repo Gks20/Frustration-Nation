@@ -1,25 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'frontend/css/style.css' %}">
-</head>
+{% extends "frontend/base.html" %}
+{% load static %}
 
-<body>
-  <header>
-      <h1>
-       Welcome to the gag game!
-      </h1>
-  </header>
-  
-  <main>
-    <!-- div for the "card" style format on the login screen (style it in style.css)-->
+{% block title %}Login - Project Red{% endblock %}
+
+{% block body_class %}page-login{% endblock %}
+
+{% block navigation %}
+  <!-- Login page should have no navigation menu - just the logo -->
+{% endblock %}
+
+{% block content %}
+    <!-- div for the card style format on the login screen (check style.css)-->
     <div class="login-card">
-      <h1 class="header-login">
-        <button class="login-btn">LOGIN</button>
+      <h1 class="header-login" id="headerLogin" role="button" tabindex="0">
+        LOGIN
       </h1>
+      <div id="loginMessage" class="inline-message" aria-live="polite"></div>
       <form id="loginForm">
         <div class="form-group">
           <label for="email">Email</label>
@@ -29,15 +25,12 @@
           <label for="password">Password</label>
           <input type="password" id="password" placeholder="Enter your password" required>
         </div>
-        <button id="login-button">Login</button>
+  <button id="login-button" type="submit">Submit</button>
         <button type="button"> Complaint? </button>
       </form>
     </div>
-    
-<!--  <button class="login-btn">
-          <a href="{% url 'start' %}">Login Page</a></button>-->
 
-    <!-- cookies puzzle (cookies consent box)-->
+    <!-- cookies (cookies consent box)-->
     <div id="cookieConsentBox" style="display: none;">
       <h2>This website uses cookies!</h2>
       <p>We use cookies. We're running out of cookies. Give us your cookies.</p>
@@ -46,15 +39,20 @@
     </div>
   </main>
   
-  <footer>
-    <div class="footer">
-      <p>Created by Team Red <br>
-        &copy; 2025, All Rights Reserved
-      </p>
-    </div>
-  </footer>
+  <footer class="site-footer">
+  <div class="wave-wrapper" aria-hidden="true">
+    <svg class="wave wave-back" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,30 C150,90 350,0 600,30 C850,60 1050,10 1200,40 L1200,120 L0,120 Z"></path>
+    </svg>
 
-<!-- connects to JavaScript file with respective functions -->
-<script src="{% static 'frontend/js/login.js' %}"></script> 
-</body>
-</html>
+    <svg class="wave wave-front" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,50 C200,10 400,90 600,50 C800,10 1000,90 1200,50 L1200,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <!-- toast container for cookie prompts -->
+  <div id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <div class="footer-content">
+<script src="{% static 'frontend/js/login.js' %}"></script>
+{% endblock %}

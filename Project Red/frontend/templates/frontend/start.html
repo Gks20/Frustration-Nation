@@ -1,30 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Start</title>
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'frontend/css/style.css' %}">
-</head>
+{% extends "frontend/base.html" %}
+{% load static %}
 
-<body>
+{% block body_class %}page-start{% endblock %}
+{% block title %}Start Game - Project Red{% endblock %}
+
+{% block navigation %}
+
+{% endblock %}
+
+{% block header %}
   <header>
-    <h1>
-      Welcome to the gag game!
-    </h1>
+    <img class="site-logo" src="{% static 'frontend/image/header-logo-1100.png' %}"
+     alt="Welcome to the Frustration Nation!" />
   </header>
+{% endblock %}
 
-  <button id="bouncingButton">START GAME!</button>
-</body>
-
-  <footer>
-    <div class="footer">
-      <p>Created by Team Red <br>
-        &copy; 2025, All Rights Reserved
-      </p>
+{% block content %}
+  <div class="start-page-container">
+    <div class="start-content">
+      <h1>Welcome to the gag game!</h1>
+      <button id="bouncingButton">START GAME!</button>
     </div>
-  </footer>
+  </div>
 
-<!-- connects to JavaScript file with respective functions -->
-<script src="{% static 'frontend/js/start.js' %}"></script> 
-</html>
+<script src="{% static 'frontend/js/start.js' %}"></script>
+{% endblock %}
