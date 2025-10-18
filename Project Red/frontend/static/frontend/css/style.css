@@ -3,7 +3,7 @@
   position: relative;
   overflow: hidden;
 }
-
+/* --- Cast splash effect: initial hidden state --- */
 .cast-splash {
   position: absolute;
   left: 50%;
@@ -17,10 +17,11 @@
   pointer-events: none;
 }
 
+/* --- Cast splash effect: animation state --- */
 .cast-splash.animate {
   animation: castSplash 550ms ease-out forwards;
 }
-
+/* --- Cast splash effect: anim keyframes--- */
 @keyframes castSplash {
   0% {
     transform: translate(-50%, -50%) scale(0.2);
@@ -37,10 +38,12 @@
   }
 }
 
+/* Basic button effect */
 .btn-bump {
   animation: btnBump 260ms ease-out;
 }
 
+/* Button keyframes */
 @keyframes btnBump {
   0% {
     transform: translateY(0) scale(1);
@@ -72,6 +75,7 @@
   overflow: hidden;
 }
 
+/* Gold sweep on milestone */
 .progress .gold-sweep {
   position: absolute;
   inset: 0;
@@ -79,10 +83,12 @@
   transform: translateX(-100%);
 }
 
+/* Combination */
 .progress.sweep .gold-sweep {
   animation: goldSweep 900ms ease-out forwards;
 }
 
+/* Progress bar gold sweep keyframes*/
 @keyframes goldSweep {
   to {
     transform: translateX(100%);
@@ -134,6 +140,7 @@
     flex-wrap: wrap;
   }
 
+  /* Return to game button */
   .back-to-game {
     background: linear-gradient(135deg, #ff7a3b, #ffb34a);
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
@@ -143,6 +150,7 @@
     transform: translateY(-2px) scale(1.05);
   }
 
+  /* Currency */
   .coin-display {
     display: inline-flex;
     align-items: center;
@@ -170,6 +178,7 @@
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
   }
 
+  /* Navigation */
   .store-nav {
     display: flex;
     gap: 0.5rem;
@@ -212,6 +221,7 @@
     border: 1px solid rgba(10, 139, 224, 0.3);
   }
 
+  /* Products */
   .products-section {
     margin-top: 0.5rem;
   }
@@ -298,6 +308,7 @@
     color: #093057;
   }
 
+  /* Purchase button */
   .buy-btn[disabled] {
     background: #e6eef8;
     color: #7b97b5;
@@ -309,6 +320,7 @@
     animation: btnShake 450ms ease;
   }
 
+  /* Shaking anim keyframes */
   @keyframes btnShake {
 
     10%,
@@ -333,6 +345,7 @@
     }
   }
 
+  /* User inventory */
   .inventory-section {
     margin-top: 1.1rem;
   }
@@ -906,6 +919,7 @@ body.page-store .main-nav .glow .nav-store {
   place-items: center;
 }
 
+/* Catch pill sparkles */
 .catch-pill {
   display: inline-flex;
   align-items: center;
@@ -920,6 +934,7 @@ body.page-store .main-nav .glow .nav-store {
   animation: catchIn 240ms ease-out;
 }
 
+/* Catch anim keyframes */
 @keyframes catchIn {
   from {
     transform: translateY(-6px);
@@ -932,6 +947,7 @@ body.page-store .main-nav .glow .nav-store {
   }
 }
 
+/* Catch types */
 .catch-emoji {
   font-size: 1.3rem;
 }
@@ -1136,6 +1152,7 @@ body.page-store .main-nav .glow .nav-store {
   }
 }
 
+/* Game messages */
 .game-message {
   display: none;
   margin: 0 0 1rem 0;
@@ -1184,6 +1201,7 @@ body.page-store .main-nav .glow .nav-store {
   color: #8a0000;
 }
 
+/* Title text */
 .game-title {
   position: relative;
   display: inline-flex;
@@ -1203,6 +1221,7 @@ body.page-store .main-nav .glow .nav-store {
   animation: shimmer 3.2s linear infinite;
 }
 
+/* Shimmer effect */
 @keyframes shimmer {
   0% {
     background-position: 0% 50%;
@@ -1226,6 +1245,7 @@ body.page-store .main-nav .glow .nav-store {
   animation: glowPulse 2.6s ease-in-out infinite;
 }
 
+/* Glow effect */
 @keyframes glowPulse {
 
   0%,
@@ -1327,6 +1347,7 @@ body.page-store .main-nav .glow .nav-store {
   border-radius: 50%;
 }
 
+/* Swim anim */
 @keyframes swim {
 
   0%,
@@ -1420,6 +1441,7 @@ body {
   text-align: left;
 }
 
+/* Login card */
 .login-card input {
   width: 100%;
   padding: 0.5rem;
@@ -1427,6 +1449,7 @@ body {
   border-radius: 5px;
 }
 
+/* Inline messages */
 .inline-message {
   display: none;
   /* hidden until a message is set */
@@ -1709,6 +1732,7 @@ button:hover {
   background: rgba(230, 0, 0, 0.95);
 }
 
+/* Fade anim */
 @keyframes fadeIn {
   from {
     opacity: 0;
