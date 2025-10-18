@@ -1,6 +1,8 @@
-// Store JavaScript - Enhanced Product Catalog and Inventory Management
+// Store JavaScript
+// Enhanced Product Catalog & Inventory Management
+// Product catalog (store items) with category, visuals, and unique effects
+// Each object represents a purchasable store item
 
-// Product catalog with enhanced visual representations
 const products = [
     // Baits
     {
@@ -119,24 +121,25 @@ const products = [
     }
 ];
 
-// Inventory management
+// Retrieve player inventory from localStorage or initialize an empty one
 let inventory = JSON.parse(localStorage.getItem('fishingInventory')) || [];
 
-// Custom popup system
+// Display a popup message overlay with title and message
 function showPopup(title, message) {
     document.getElementById('popup-title').textContent = title;
     document.getElementById('popup-message').textContent = message;
     const overlay = document.getElementById('popup-overlay');
     overlay.style.display = 'flex';
-    const dialog = overlay.querySelector('.popup-content');
+    const dialog = overlay.querySelector('.popup-content'); // Focus the dialog for accessibility
     if (dialog) setTimeout(() => dialog.focus(), 0);
 }
 
 function closePopup() {
-    document.getElementById('popup-overlay').style.display = 'none';
+    document.getElementById('popup-overlay').style.display = 'none'; // Hide the popup overlay
 }
 
 // Initialize store
+// Setup store once DOM is ready
 document.addEventListener('DOMContentLoaded', function () {
     updateCoinDisplay();
     displayProducts('all');
@@ -223,7 +226,7 @@ function displayProducts(category = 'all') {
     });
 }
 
-// Create product card element
+// Create the visual card for each product
 function createProductCard(product) {
     const card = document.createElement('div');
     card.className = 'product-card';
@@ -234,6 +237,8 @@ function createProductCard(product) {
     const tooltip = `${product.effect} — ${nonStackable ? 'Single item' : 'Stacks'}`;
     const nextTier = nonStackable ? (invCount > 0 ? 'Max' : 'Tier 1') : `Tier ${invCount + 1}`;
     const priceNow = getDynamicPrice(product);
+    
+    // Template literal for HTML structure of product card
     card.innerHTML = `
         <div class="product-visual" title="${tooltip}">${product.visual}</div>
         <div class="product-info">
@@ -253,7 +258,8 @@ function createProductCard(product) {
             </div>
         </div>
     `;
-    // attach click listener here to support animation hooks
+    
+    // Attach buy event if item is available
     const btn = card.querySelector('.buy-btn');
     if (btn && !disabled) {
         btn.addEventListener('click', (e) => {
@@ -265,12 +271,13 @@ function createProductCard(product) {
     return card;
 }
 
-// Purchase item
+// Handle the purchase of an item
 function purchaseItem(productId, sourceButton) {
     const product = products.find(p => p.id === productId);
     const currentCoins = parseInt(localStorage.getItem('fishCoins')) || 0;
     const priceNow = getDynamicPrice(product);
 
+    // Check if player can afford the item
     if (currentCoins >= priceNow) {
         // Deduct coins
         const newCoinTotal = currentCoins - priceNow;
@@ -285,7 +292,7 @@ function purchaseItem(productId, sourceButton) {
         // Add to inventory
         addToInventory(product);
 
-        // Update displays
+        // Update relevant UI
         updateCoinDisplay();
         displayInventory();
         // Re-render products to update badges/disabled states keeping current filters
