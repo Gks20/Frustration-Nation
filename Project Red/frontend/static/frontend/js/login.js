@@ -1,14 +1,23 @@
+/* Module: login.js 
+Description: 
+- Handles the gag-style login screen logic including invalid attempt tracking, cookie consent prompt, interactive animations (confetti, cookie rain, celebration banner), and keyboard accessibility.
+ */
+
+// Track the number of failed login attempts
 let loginAttempts = 0;
 
+// Utility: Display a message in the login message area
 function setMessage(text, level = 'info') {
   const box = document.getElementById('loginMessage');
   if (!box) return;
+  // Reset previous styles and apply new message level (info, warn, or error)
   box.classList.remove('info', 'warn', 'error');
   if (level) box.classList.add(level);
   box.textContent = text || '';
   box.style.display = text ? 'block' : 'none';
 }
 
+// Utility: Temporary notification (toast) popup
 function showToast(text, level = 'info', timeout = 2500) {
   const container = document.getElementById('toastContainer');
   if (!container) return;
@@ -16,6 +25,7 @@ function showToast(text, level = 'info', timeout = 2500) {
   el.className = `toast ${level}`;
   el.textContent = text;
   container.appendChild(el);
+  // Fade out and remove the toast after a short delay
   setTimeout(() => {
     el.style.transition = 'opacity 250ms ease';
     el.style.opacity = '0';
@@ -23,11 +33,13 @@ function showToast(text, level = 'info', timeout = 2500) {
   }, timeout);
 }
 
+// Utility: Celebration banner for major actions (like "cookie unlocked")
 function showCelebration(text = 'Cookies unlocked! 🎉', timeout = 1800) {
   const el = document.createElement('div');
   el.className = 'celebration-banner';
   el.textContent = text;
   document.body.appendChild(el);
+  // Animate fade out and removal
   setTimeout(() => {
     el.style.transition = 'opacity 300ms ease, transform 300ms ease';
     el.style.opacity = '0';
@@ -36,6 +48,7 @@ function showCelebration(text = 'Cookies unlocked! 🎉', timeout = 1800) {
   }, timeout);
 }
 
+// Utility: Confetti burst animation for visual feedback
 function confettiBurst(count = 80) {
   const colors = ['#f94144', '#f3722c', '#f8961e', '#f9c74f', '#90be6d', '#43aa8b', '#577590', '#4d96ff', '#6a4c93'];
   const max = Math.max(30, count);
@@ -43,6 +56,7 @@ function confettiBurst(count = 80) {
     const el = document.createElement('div');
     el.className = 'confetti';
     const left = Math.random() * 100; // vw
+    // Randomize placement, color, and animation properties
     el.style.left = left + 'vw';
     el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
     el.style.opacity = String(0.85 + Math.random() * 0.15);
@@ -55,11 +69,12 @@ function confettiBurst(count = 80) {
     el.addEventListener('animationend', () => el.remove());
   }
 }
-
+ // Form Logic: Fake invalid login handling with incremental hints
 function invalidLogin(e) {
   e.preventDefault(); // stop form submission refresh
 
   loginAttempts++;
+  // Display escalating messages for each attempt
   if (loginAttempts === 1) {
     setMessage('Invalid username or password.', 'error');
   } else if (loginAttempts === 2) {
@@ -69,11 +84,13 @@ function invalidLogin(e) {
   }
 }
 
-// Bind the invalid login behavior to the form submit button
+// Hook up fake login button and hidden shortcut
+// Fake "Login" button triggers invalid login sequence
 const realLoginBtn = document.getElementById('login-button');
 if (realLoginBtn) {
   realLoginBtn.addEventListener('click', invalidLogin);
 }
+
 
 // Header LOGIN text acts as a hidden shortcut to proceed without credentials
 const headerLogin = document.getElementById('headerLogin');
@@ -88,6 +105,7 @@ if (headerLogin) {
   });
 }
 
+// cookies consent & logic
 document.addEventListener("DOMContentLoaded", () => {
   const cookieBox = document.getElementById("cookieConsentBox");
   const acceptBtn = document.getElementById("acceptCookies");
@@ -111,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const el = document.createElement('span');
       el.className = 'cookie-emoji';
       el.textContent = '🍪';
+      // Randomize animation position, speed, and delay
       el.style.left = Math.floor(Math.random() * 100) + 'vw';
       el.style.fontSize = (18 + Math.random() * 18) + 'px';
       el.style.animationDuration = (2.5 + Math.random() * 2.5) + 's';
