@@ -1,7 +1,6 @@
-/* Module: login.js 
-Description: 
-- Handles the gag-style login screen logic including invalid attempt tracking, cookie consent prompt, interactive animations (confetti, cookie rain, celebration banner), and keyboard accessibility.
- */
+// Module: login.js 
+//Description: 
+// Handles the gag-style login screen logic including invalid attempt tracking, cookie consent prompt, interactive animations (confetti, cookie rain, celebration banner), and keyboard accessibility.
 
 // Track the number of failed login attempts
 let loginAttempts = 0;
