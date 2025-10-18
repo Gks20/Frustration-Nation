@@ -14,24 +14,32 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# Import Django admin interface
 from django.contrib import admin
+
+# Import path and include functions for routing URLs to views or other URL configurations
 from django.urls import path, include
+
+# Import settings and static helpers for serving media/static files during development
 from django.conf import settings
 from django.conf.urls.static import static
+
+# Import views from the frontend app (used for main site pages)
 from frontend import views
 
-
+# Define all URL patterns for the project
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), # Django admin panel route
     path("", views.index, name="index"), # project home page
-    path("game/", views.game, name="game"),
-    path("login/", views.login, name="login"),
-    path("start/", views.start, name="start"),
-    path("store/", include('store.urls')),
+    path("game/", views.game, name="game"), # Route for the main game page
+    path("login/", views.login, name="login"), # Route for the login page
+    path("start/", views.start, name="start"), # Route for the start page
+    path("store/", include('store.urls')), # Include URL configurations from the store app
     path("", include('gameplay.urls')),  # Include gameplay API endpoints
 ]
 
-# Serve static files during development
+# # Serve static and media files during development (when DEBUG = True)
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # Serve static files (CSS, JS, images in STATIC directory)
+
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Serve user-uploaded media files (in MEDIA directory)
