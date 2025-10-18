@@ -401,11 +401,11 @@ function setupSortAndFilters() {
     if (ownedToggle) ownedToggle.addEventListener('change', refresh);
 }
 
-// Purchase feedback animations
+// Placeholder function for initializing animation helpers
 function wirePurchaseAnimationHelpers() {
-    // no-op placeholder to signal initialization in DOMContentLoaded if needed later
 }
 
+// Confetti burst animation upon purchase
 function launchConfetti(originEl) {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const container = document.body;
@@ -432,11 +432,13 @@ function launchConfetti(originEl) {
     }
 }
 
+// Randomized confetti color palette
 function randomConfettiColor() {
     const palette = ['#ffd54f', '#4fc3f7', '#ff8a65', '#81c784', '#ba68c8'];
     return palette[(Math.random() * palette.length) | 0];
 }
 
+// Coin animation flying toward the coin counter after purchase
 function animateCoinFlyout(originEl) {
     if (!originEl) return;
     const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
