@@ -1,27 +1,34 @@
-// Global fake ads popups (goofy overstimulation vibe)
+//  Module: app.js
+ // Description: 
+// - Global behavior script for the gag game site. 
+// - Includes simulated ad popups, coin synchronization across pages, global toast notifications, and  an easter egg (Konami code → Aquarium Mode).
 (function () {
   const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const adLayer = document.getElementById('adLayer');
   if (!adLayer) return;
 
+  // Image pool for fake advertisements
   const ads = [
     '/static/images/AD1.png', '/static/images/AD2.png', '/static/images/AD3.png', '/static/images/AD4.png',
     '/static/images/AD5.png', '/static/images/AD6.png', '/static/images/AD7.png', '/static/images/AD8.png'
   ];
 
-  let live = 0;
+  let live = 0; // number of currently active ads
   const MAX_LIVE = 3; // cap concurrent ads
   const MIN_DELAY = 20000; // 20s
   const MAX_DELAY = 45000; // 45s
   const MIN_SIZE = 180, MAX_SIZE = 360;
 
+  // Helper: random integer within range
   function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
 
+  // schedule next ad spawn
   function scheduleNext() {
     const delay = rand(MIN_DELAY, MAX_DELAY);
     setTimeout(spawnAd, delay);
   }
 
+  // create new ad
   function spawnAd() {
     if (live >= MAX_LIVE) { scheduleNext(); return; }
     const imgPath = ads[rand(0, ads.length - 1)];
@@ -29,26 +36,29 @@
     imgEl.alt = 'Advertisement';
     imgEl.src = imgPath;
 
+    // Once loaded, calculate size and render on screen
     const mountAd = (naturalW, naturalH) => {
       const aspect = (naturalW > 0 && naturalH > 0) ? (naturalW / naturalH) : (4 / 3);
       let w = rand(MIN_SIZE, MAX_SIZE);
       let h = Math.round(w / aspect);
       const vpW = window.innerWidth, vpH = window.innerHeight;
-      // clamp to viewport
+      // Prevent exceeding viewport size
       const maxW = Math.max(160, vpW - 40);
       const maxH = Math.max(140, vpH - 100);
       if (w > maxW) { w = maxW; h = Math.round(w / aspect); }
       if (h > maxH) { h = maxH; w = Math.round(h * aspect); }
 
+      // Create popup container
       const el = document.createElement('div');
       el.className = 'popup-ad';
       el.style.width = w + 'px';
       el.style.height = h + 'px';
+      // Randomize position within viewport
       const left = rand(10, Math.max(10, vpW - w - 10));
       const top = rand(50, Math.max(50, vpH - h - 50));
       el.style.left = left + 'px';
       el.style.top = top + 'px';
-
+      // add close button
       const closeBtn = document.createElement('button');
       closeBtn.className = 'close';
       closeBtn.setAttribute('aria-label', 'Close');
@@ -137,6 +147,8 @@
       idx = (key === seq[0]) ? 1 : 0;
     }
   }
+
+  // Create floating aquatic emoji animations
   function spawnAquarium() {
     const emojis = ['🐟', '🐠', '🦈', '🐡', '🦑', '🦀'];
     const n = Math.min(24, Math.max(12, Math.round(window.innerWidth / 80)));
@@ -144,16 +156,19 @@
       const s = document.createElement('span');
       s.className = 'aquarium-fish';
       s.textContent = emojis[(Math.random() * emojis.length) | 0];
+      // Randomized movement parameters
       const top = Math.random() * 80 + 5; // vh
       const size = 16 + Math.random() * 18; // px
       const duration = 8000 + Math.random() * 7000;
       const delay = Math.random() * 1200;
       const fromLeft = Math.random() < 0.5;
+      // Position fish and flip horizontally depending on direction
       s.style.top = top + 'vh';
       s.style.fontSize = size + 'px';
       s.style.left = fromLeft ? '-5vw' : '105vw';
       s.style.transform = fromLeft ? 'scaleX(1)' : 'scaleX(-1)';
       document.body.appendChild(s);
+      // Smooth horizontal swim animation across the screen
       const keyframes = [
         { transform: s.style.transform + ' translateX(0)', opacity: 0.0 },
         { opacity: 1, offset: 0.1 },
