@@ -5,19 +5,30 @@
 
 {% block body_class %}page-store{% endblock %}
 {% block content %}
+<!-- Main container for the store page -->
 <div class="store-container">
+
+    <!-- Hero section with store title, description, and floating items -->
     <div class="store-hero">
+
+        <!-- Left side: store title, subtitle, CTA buttons, coin display -->
         <div class="store-hero__left">
             <h1 class="store-title">The Chaotic Shoppe</h1>
             <p class="store-sub">Spend those shiny coins on questionable upgrades.</p>
+            <!-- Call-to-action buttons and coin display -->vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
             <div class="store-cta">
+                <!-- Back to game button -->
                 <a href="{% url 'game' %}" class="btn btn-primary back-to-game">⬅ Back to Fishing</a>
+
+                <!-- Current coin count display -->
                 <div class="coin-display">
                     <span class="coin-chip">🪙</span>
                     <span id="store-coins">0</span>
                 </div>
             </div>
         </div>
+
+        <!-- Right side: decorative sparkles and floating icons -->
         <div class="store-hero__right" aria-hidden="true">
             <div class="sparkles"></div>
             <div class="floaty-items">
@@ -26,12 +37,17 @@
         </div>
     </div>
 
+    <!-- Store navigation: categories and sort/filter options -->
     <div class="store-nav">
+        
+        <!-- Category buttons -->
         <button class="category-btn active" data-category="all">All</button>
         <button class="category-btn" data-category="baits">Baits</button>
         <button class="category-btn" data-category="rods">Rods</button>
         <button class="category-btn" data-category="upgrades">Upgrades</button>
         <button class="category-btn" data-category="decorations">Decor</button>
+
+        <!-- Sorting and filter options -->
         <div class="store-sort" role="group" aria-label="Sort and filters">
             <label for="sort-select" class="visually-hidden">Sort by</label>
             <select id="sort-select" aria-label="Sort products">
@@ -41,17 +57,19 @@
                 <option value="name-asc">Name: A → Z</option>
                 <option value="name-desc">Name: Z → A</option>
             </select>
+
+            <!-- Filter to show only owned items -->
             <label class="owned-only">
                 <input type="checkbox" id="owned-only-toggle" />
                 <span>Owned only</span>
             </label>
         </div>
     </div>
-
+    <!-- Product grid: dynamically populated via JS -->
     <section class="products-section">
         <div class="products-grid" id="products-grid"></div>
     </section>
-
+    <!-- Inventory grid: shows player's owned items -->
     <section class="inventory-section">
         <h2>Your Inventory</h2>
         <div class="inventory-grid" id="inventory-grid"></div>
@@ -61,13 +79,19 @@
 <!-- Custom popup overlay -->
 <div id="popup-overlay" class="popup-overlay">
     <div class="popup-content" role="dialog" aria-modal="true" aria-labelledby="popup-title" tabindex="-1">
+
+        <!-- Popup header with title and close button -->
         <div class="popup-header">
             <h3 id="popup-title">Store</h3>
             <button class="popup-close" onclick="closePopup()">&times;</button>
         </div>
+
+        <!-- Popup body message -->
         <div class="popup-body">
             <p id="popup-message"></p>
         </div>
+
+        <!-- Popup footer w/ confirmation button-->
         <div class="popup-footer">
             <button class="popup-btn popup-confirm" onclick="closePopup()">OK</button>
         </div>
