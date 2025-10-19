@@ -1,20 +1,27 @@
 {% extends "frontend/base.html" %}
 {% load static %}
-
+<!-- Page title for the fishing game -->
 {% block title %}Fishing Game{% endblock %}
-
+<!-- Custom body class for game page styling -->
 {% block body_class %}page-game{% endblock %}
 
 {% block content %}
+<!-- Main container for the fishing game interface -->
   <div class="game-page">
+    <!-- Game card section holds title, stats, and gameplay area -->
     <section class="game-card" role="region" aria-labelledby="gameTitleHeading">
+      <!-- Header section: game title and coin/streak display -->
       <div class="game-card__header">
         <div class="game-card__header-row">
+          <!-- Dynamic game title; includes animation elements and theme badge -->
           <h1 id="gameTitleHeading" class="game-title title-theme-badge" aria-live="polite">
             <span class="title-text"><span id="fishyName">Frustration Fishing</span></span>
+            <!-- Decorative underline and fishy icon -->
             <span class="title-underline" aria-hidden="true"></span>
             <span class="fishy" aria-hidden="true"></span>
           </h1>
+
+          <!-- Player stats: coin balance and cast streak -->
           <div class="header-stats" aria-live="polite">
             <span id="coins" class="coin-chip" title="Coins">0</span>
             <span id="streak" class="streak-pill" title="Cast streak">Streak x0</span>
@@ -22,23 +29,34 @@
         </div>
       </div>
 
+
+      <!-- Main gameplay body area -->
       <div class="game-card__body">
+        <!-- Decorative background layers to simulate water -->
         <div class="water-ambient" aria-hidden="true">
           <div class="water-gradient"></div>
           <div class="caustics"></div>
           <div class="drift-bubbles" id="ambientBubbles"></div>
         </div>
+
+        <!-- Dynamic area for in-game messages -->
         <div id="gameMessage" class="game-message" aria-live="polite"></div>
+
+  <!-- Catch display area: shows what the player just caught -->
   <div id="catchDisplay" class="catch-display" aria-live="polite"></div>
+  <!-- Section for listing recent catches -->
   <div id="recentCatches" class="recent-catches" aria-live="off" aria-label="Recent catches"></div>
+        <!-- Central container for core gameplay UI -->
         <div class="container">
           <p>Current Count: <span id="counter">0</span></p>
+          <!-- Main game control buttons -->
           <div class="controls-row">
             <button id="castButton">Cast</button>
             <button id="autoToggle" class="btn-secondary" aria-pressed="false" title="Auto cast (requires Auto-Clicker)">Auto</button>
           </div>
         </div>
 
+        <!-- Progress bar tracking toward next reward -->
         <div class="progress" aria-hidden="false">
           <div class="progress-bar" id="rewardProgress" style="width: 0%"></div>
           <div class="progress-label" id="progressLabel">Next bonus at 10 casts</div>
