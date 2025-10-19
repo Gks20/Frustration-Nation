@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic metadata and character encoding -->
   <meta charset="UTF-8">
+  <!-- Page title block (can be overridden by child templates) -->
   <title>{% block title %}Project Red Game{% endblock %}</title>
+  <!-- Load Django static files -->
   {% load static %}
+  <!-- Main stylesheet for the frontend -->
   <link rel="stylesheet" href="{% static 'frontend/css/style.css' %}">
 </head>
+  <!-- Body class block allows pages to define their own styling context -->
 <body class="{% block body_class %}{% endblock %}">
   {% block header %}
+  <!-- Site header with logo and tagline -->
   <header>
     <img class="site-logo" src="{% static 'frontend/image/header-logo-1100.png' %}"
      alt="Welcome to the Frustration Nation!" />
@@ -15,10 +21,13 @@
   {% endblock %}
 
   {% block navigation %}
+  <!-- Main navigation bar for global site links -->
   <nav class="main-nav">
     <div class="glow">
+      <!-- Links -->
       <a class="nav-home" href="{% url 'index' %}">Home</a>
       <a class="nav-store" href="{% url 'store:storefront' %}">Store</a>
+      <!-- Global coin display visible across all pages -->
       <div class="nav-coins coin-display" aria-label="Coins">
         <span class="coin-chip">🪙</span>
         <span id="global-coins">0</span>
@@ -33,13 +42,16 @@
     <div class="home-welcome">
       <h1>Welcome to Project Red</h1>
       <p>Choose your path to the fishing adventure:</p>
-      
+
+      <!-- Options menu -->
       <div class="home-options">
+        <!-- Login option -->
         <a href="{% url 'login' %}" class="home-btn login-btn">
           <h3>🔐 Login</h3>
           <p>Go through the proper login process</p>
         </a>
-        
+
+        <!-- Skip directly to the fishing game; FOR DEBUGGING AND EASIER TESTING, REMOVE LATER !!! -->
         <a href="{% url 'game' %}" class="home-btn skip-btn">
           <h3>🎣 Skip to Fishing</h3>
           <p>Skip the annoying login and get straight to the action!</p>
@@ -48,26 +60,29 @@
     </div>
     {% endblock %}
   </main>
-
+  <!-- Site footer with animated SVG wave graphics -->
   <footer class="site-footer">
+  <!-- Background wave -->
   <div class="wave-wrapper" aria-hidden="true">
     <svg class="wave wave-back" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,30 C150,90 350,0 600,30 C850,60 1050,10 1200,40 L1200,120 L0,120 Z"></path>
     </svg>
-
+    <!-- Foreground wave -->
     <svg class="wave wave-front" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,50 C200,10 400,90 600,50 C800,10 1000,90 1200,50 L1200,120 L0,120 Z"></path>
     </svg>
   </div>
-
+  <!-- Footer -->
   <div class="footer-content">
     <p>Created by Team Red <br>
       &copy; 2025, All Rights Reserved
     </p>
   </div>
 </footer>
-  
+<!-- Hidden ad layer placeholder -->
 <div id="adLayer" aria-hidden="true"></div>
+
+<!-- Main JavaScript file for global functionality -->
 <script src="{% static 'frontend/js/app.js' %}"></script>
 </body>
 </html>
