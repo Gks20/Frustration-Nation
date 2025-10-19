@@ -10,16 +10,19 @@
 {% endblock %}
 
 {% block content %}
+<!-- Welcome banner -->
   <div class="home-welcome">
     <h1>Welcome to Project Red</h1>
     <p>Choose your path to the fishing adventure:</p>
-    
+
+    <!-- Options -->
     <div class="home-options">
       <a href="{% url 'login' %}" class="home-btn login-btn">
         <h3>🔐 Login</h3>
         <p>Go through the proper login process</p>
       </a>
-      
+
+      <!-- Skip Button (For bug testing, remove when completed!!) -->
       <a href="{% url 'game' %}" class="home-btn skip-btn">
         <h3>🎣 Skip to Fishing</h3>
         <p>Skip the annoying login and get straight to the action!</p>
