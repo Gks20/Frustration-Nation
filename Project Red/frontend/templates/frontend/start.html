@@ -1,13 +1,18 @@
 {% extends "frontend/base.html" %}
 {% load static %}
 
+<!-- Assigns a custom body class for start page styling -->
 {% block body_class %}page-start{% endblock %}
+
+<!-- Sets the HTML title for this page -->
 {% block title %}Start Game - Project Red{% endblock %}
 
+
+<!-- Overrides the navigation block from base template (intentionally left empty) -->
 {% block navigation %}
 
 {% endblock %}
-
+<!-- Site header with logo (reuses base styling) -->
 {% block header %}
   <header>
     <img class="site-logo" src="{% static 'frontend/image/header-logo-1100.png' %}"
@@ -16,12 +21,16 @@
 {% endblock %}
 
 {% block content %}
+<!-- Main container for start page layout -->
   <div class="start-page-container">
+     <!-- Central content: title and interactive start button -->
     <div class="start-content">
       <h1>Welcome to the gag game!</h1>
+      <!-- Main "Start Game" button (animated via JavaScript) -->
       <button id="bouncingButton">START GAME!</button>
     </div>
   </div>
 
+<!-- JavaScript controlling button animations and game start logic -->
 <script src="{% static 'frontend/js/start.js' %}"></script>
 {% endblock %}
